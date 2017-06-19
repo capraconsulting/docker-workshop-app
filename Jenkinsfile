@@ -23,7 +23,7 @@ ansiColor('xterm') {
     def deployImg
 
     stage('Build Docker deployment unit') {
-      deployImg = docker.build('docker-workshop', '.')
+      deployImg = docker.build('spring-boot-rest', '.')
     }
 
     stage('Push Docker image') {
