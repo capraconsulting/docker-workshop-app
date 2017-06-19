@@ -27,7 +27,7 @@ ansiColor('xterm') {
     }
 
     stage('Push Docker image') {
-      deployImg.push('427085930992.dkr.ecr.eu-west-1.amazonaws.com/docker-workshop')
+      deployImg.push()
     }
 
     deleteDir()
