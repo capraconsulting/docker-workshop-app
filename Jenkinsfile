@@ -15,7 +15,7 @@ ansiColor('xterm') {
     }
 
     stage('Build application (jar)') {
-      img.inside {
+      img.inside('-v docker-workshop-builder-m2:/home/jenkins-slave/.m2') {
         sh 'mvn -B package'
       }
     }
