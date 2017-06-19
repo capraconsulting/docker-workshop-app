@@ -38,7 +38,7 @@ def dockerNode(body) {
   node('docker') {
     sh 'eval $(aws ecr get-login)'
 
-    docker.withRegistry('427085930992.dkr.ecr.eu-west-1.amazonaws.com') {
+    docker.withRegistry('https://427085930992.dkr.ecr.eu-west-1.amazonaws.com/') {
       body()
     }
   }
