@@ -36,7 +36,7 @@ ansiColor('xterm') {
 
 def dockerNode(body) {
   node('docker') {
-    sh 'eval $(aws ecr get-login --region eu-west-1)'
+    sh '(set +x; eval $(aws ecr get-login --region eu-west-1))'
 
     docker.withRegistry('https://427085930992.dkr.ecr.eu-west-1.amazonaws.com/') {
       body()
