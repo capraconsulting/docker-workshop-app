@@ -1,9 +1,11 @@
-FROM frolvlad/alpine-oraclejdk8:slim
-VOLUME /tmp
-ENV JAVA_OPTS="-Xmx256m"
-ADD target/gs-rest-service-0.1.0.jar app.jar
-ADD runapp.sh runapp.sh
-RUN sh -c 'touch /app.jar' \
-	&& sh -c 'touch /runapp.sh' \
-	&& chmod +x /runapp.sh
+FROM openjdk:8-jre-alpine
+
+#ENV JAVA_OPTS="-Xmx512m"
+RUN adduser -S app
+USER app
+
+COPY container/runapp.sh runapp.sh
+
+COPY target/gs-rest-service-*.jar app.jar
+EXPOSE 8080
 CMD [ "./runapp.sh" ]
