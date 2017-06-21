@@ -1,0 +1,10 @@
+FROM maven:3-jdk-8
+
+#ENV JAVA_OPTS="-Xmx512m"
+RUN apt-get install -y bash
+
+COPY container/runapp.sh runapp.sh
+
+COPY target/gs-rest-service-*.jar app.jar
+EXPOSE 8080
+CMD [ "./runapp.sh" ]
