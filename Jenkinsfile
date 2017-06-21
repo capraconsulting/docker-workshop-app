@@ -31,7 +31,12 @@ ansiColor('xterm') {
       deployImg = docker.build('spring-boot-rest', '.')
     }
 
-    def tagName = "${appVersion}-${env.BUILD_NUMBER}-${env.GIT_COMMIT.take(8)}"
+    def gitShortCommit = sh([
+      returnStdout: true,
+      script: 'git rev-parse --short HEAD'
+    ])
+
+    def tagName = "${appVersion}-${env.BUILD_NUMBER}-${gitShortCommit}"
 
     stage('Push Docker image') {
       deployImg.push(tagName)
