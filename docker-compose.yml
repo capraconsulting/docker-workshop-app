@@ -1,0 +1,17 @@
+version: '2.1'
+
+services:
+  app:
+    build: .
+    image: workshop
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://database/postgres
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: workshop
+    ports:
+      - '8080:8080'
+
+  database:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: workshop
