@@ -21,7 +21,7 @@ ansiColor('xterm') {
         appVersion = sh([
           returnStdout: true,
           script: 'grep version target/maven-archiver/pom.properties | awk -F= \'{ print $2 }\''
-        ])
+        ]).trim()
       }
     }
 
