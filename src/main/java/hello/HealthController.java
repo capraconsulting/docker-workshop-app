@@ -13,9 +13,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.TimeZone;
 
-/**
- * @author <a href="mailto:haakon@nymomatland.com">Håkon Nymo Matland</a> 2017-06-18.
- */
 @RestController
 public class HealthController {
 
