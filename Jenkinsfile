@@ -34,7 +34,7 @@ ansiColor('xterm') {
     def gitShortCommit = sh([
       returnStdout: true,
       script: 'git rev-parse --short HEAD'
-    ])
+    ]).trim()
 
     def tagName = "${appVersion}-${env.BUILD_NUMBER}-${gitShortCommit}"
 
