@@ -16,7 +16,7 @@ ansiColor('xterm') {
     }
 
     stage('Build application (jar)') {
-      buildImg.inside('-v docker-workshop-builder-m2:/home/jenkins-slave/.m2') {
+      buildImg.inside('-v docker-workshop-builder-m2:/home/jenkins/.m2') {
         sh 'mvn -B package'
         appVersion = sh([
           returnStdout: true,
