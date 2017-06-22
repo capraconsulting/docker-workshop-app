@@ -40,6 +40,7 @@ ansiColor('xterm') {
 
     stage('Push Docker image') {
       deployImg.push(tagName)
+      deployImg.push('latest')
     }
 
     if (env.BRANCH_NAME != 'master') {
