@@ -1,19 +1,22 @@
 package hello;
 
+import org.springframework.util.StreamUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
+import java.nio.charset.Charset;
 
 @RestController
 public class IndexController {
 
     @RequestMapping("/")
     public String index() throws IOException {
-        File file = new File(getClass().getClassLoader().getResource("index.html").getFile());
-        return new String(Files.readAllBytes(file.toPath()), "UTF-8");
+
+        return StreamUtils.copyToString(
+            getClass().getClassLoader().getResourceAsStream("index.html"),
+            Charset.forName("UTF-8")
+        );
     }
 
 }
