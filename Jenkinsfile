@@ -20,7 +20,7 @@ ansiColor('xterm') {
         sh 'mvn -B package'
         appVersion = sh([
           returnStdout: true,
-          script: 'grep version maven-archiver/pom.properties | awk -F= \'{ print $2 }\''
+          script: 'grep version target/maven-archiver/pom.properties | awk -F= \'{ print $2 }\''
         ])
       }
     }
