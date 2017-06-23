@@ -26,4 +26,5 @@ EXPOSE 8080
 
 # When the container starts we run our application
 # wrapper script.
-CMD ["/runapp.sh"]
+#CMD ["/runapp.sh"]
+CMD ["java", "-jar", "/app.jar"]
