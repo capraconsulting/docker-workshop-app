@@ -11,7 +11,22 @@ services:
     ports:
       - '8080'
 
+    # Example logging to logstash on Docker host
+    #logging:
+    #  driver: gelf
+    #  options:
+    #    # logstash is running on this address
+    #    gelf-address: udp://127.0.0.1:12201
+
+
   database:
     image: postgres
     environment:
       POSTGRES_PASSWORD: workshop
+
+    # Example logging to logstash on Docker host
+    #logging:
+    #  driver: gelf
+    #  options:
+    #    # logstash is running on this address
+    #    gelf-address: udp://127.0.0.1:12201
