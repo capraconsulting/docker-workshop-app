@@ -1,6 +1,4 @@
-*
+target
 
 #Need the jar file
 !target/*.jar
-!Dockerfile
-!container/
