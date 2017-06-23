@@ -87,6 +87,9 @@ docker run -it -p 8080:8080 workshop
 # Notice ID of container
 docker ps
 
+# Show stdout history of container
+docker logs <container>
+
 # Look at details about the container
 # Replace <container> by first part of sha ID or the name the container has received
 docker inspect <container>
