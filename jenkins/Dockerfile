@@ -20,3 +20,6 @@ RUN apk --no-cache add \
     && pip install awscli \
     && wget -O /ecs-deploy https://raw.githubusercontent.com/silinternational/ecs-deploy/$ECS_DEPLOY_VERSION/ecs-deploy \
     && chmod a+x /ecs-deploy
+
+WORKDIR /usr/src/app
+CMD ["sh"]
