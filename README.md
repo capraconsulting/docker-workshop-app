@@ -97,7 +97,7 @@ docker stats
 
 ##### Looking inside the Container
 
-```
+```bash
 # Start shell in the running container
 docker exec -it <container> sh
 
@@ -274,7 +274,7 @@ java -jar target/
 
 ### Docker as the Deployment Unit
 
-```
+```bash
 # Good vs. bad images
 # Build Dockerfile-bloated and compare with usual Dockerfile
 docker build -t workshop-bloated -f Dockerfile-bloated .
